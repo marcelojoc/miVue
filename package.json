@@ -1,0 +1,23 @@
+{
+  "name": "mivue",
+  "version": "1.0.0",
+  "description": "pruebas de entorno para vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelojoc/miVue.git"
+  },
+  "author": "marcelo Contreras",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcelojoc/miVue/issues"
+  },
+  "homepage": "https://github.com/marcelojoc/miVue#readme",
+  "devDependencies": {
+    "gulp-connect": "^5.0.0",
+    "gulp-refresh": "^1.1.0"
+  }
+}
