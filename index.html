@@ -12,7 +12,9 @@
 </head>
 <body>
     
-    <h1>{{nombre}}</h1>
+    <h1>Ejemplos</h1>
+
+    <comp1></comp1>
 
 
 <pre> {{localidad | json}}</pre>
@@ -30,7 +32,7 @@
         <div class="row form-horizontal" id= "bloque_0">     <!-- bloque 0 -->
                 <div class="panel panel-default">
                 
-                    <div class="panel-heading orange">Bloque de Identificación del Territorio/Facilitador/Familia relevada</div>
+                    <div class="panel-heading orange">{{nombre}}</div>
                         <div class="panel-body">
                         
 			
@@ -64,7 +66,17 @@
                                     </select>
                                 </div>
                             </div>
-                            
+                                                <template id="combo">
+                                                        <div class="form-group">
+                                                        <label class="control-label col-xs-6">Distrito(*)</label>
+                                                        <div class="col-xs-6">
+                                                            <select class="form-control" id="localidad" name ="4" >
+                                                            
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </template>
                             <div class="form-group">
                                 <label class="control-label col-xs-6">Distrito(*)</label>
                                 <div class="col-xs-6">

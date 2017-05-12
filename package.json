@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/marcelojoc/miVue#readme",
   "devDependencies": {
-    "gulp-connect": "^5.0.0",
-    "gulp-refresh": "^1.1.0"
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0"
   }
 }
