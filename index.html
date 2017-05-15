@@ -11,10 +11,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
+
+    <div id="componente">
+
+
     <h1>Ejemplos</h1>
 
-    <comp1></comp1>
+    
+
+
+    </div>
+    
+
 
 
 <pre> {{localidad | json}}</pre>
@@ -35,11 +43,14 @@
                     <div class="panel-heading orange">{{nombre}}</div>
                         <div class="panel-body">
                         
-			
+			<comp1></comp1>
+            <comp1></comp1>
+            <comp1></comp1>
+
                             <div class="form-group">
                                 <label for="inputName" class="control-label col-xs-6">Facilitador(*)</label>
                                 <div class="col-xs-6">
-                                    <input type="name" class="form-control" placeholder="Combo Facilitadores" name= "1" id="nom_facilitador"  required>
+                                    <input type="name" class="form-control" placeholder="comp1 Facilitadores" name= "1" id="nom_facilitador"  required>
                                 </div>
                             </div>
 
@@ -57,7 +68,7 @@
                                 </div>
                             </div>
                             
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label class="control-label col-xs-6">Departamento(*)</label>
                                 <div class="col-xs-6">
                                     <select class="form-control" id="departamento" name ="3" id ="select_dep" onchange="cargarLocalidades()">
@@ -65,17 +76,15 @@
                                             <option v-for= "loc in localidad" value="" >{{loc}}</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div>-->
                                                 <template id="combo">
                                                         <div class="form-group">
-                                                        <label class="control-label col-xs-6">Distrito(*)</label>
+                                                        <label class="control-label col-xs-6">{{label}}</label>
                                                         <div class="col-xs-6">
-                                                            <select class="form-control" id="localidad" name ="4" >
-                                                            
-
-                                                            </select>
+                                                                            {{nombre}}
                                                         </div>
                                                     </div>
+                                                    <!--<pre>{{$data | json}}</pre>-->
                                                 </template>
                             <div class="form-group">
                                 <label class="control-label col-xs-6">Distrito(*)</label>
