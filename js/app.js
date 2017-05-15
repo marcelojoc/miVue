@@ -17,11 +17,17 @@
 // });
 
 
-
 // todo crear componentes con vue
 Vue.component('comp1', 
     {
-        template:'#combo',
+        template:'  <div class="form-group">\
+                        <label class="control-label col-xs-6">{{label }} {{actividad}}</label>\
+                        <div class="col-xs-6">\
+                            <p>{{ nombre }}</p>\
+                            <input type="number" class="form-control"  name="5" id="barrio_c" v-if="estado" v-model="nombre">\
+                        </div>\
+                    </div>',
+
 
         ready:function(){
 
@@ -33,7 +39,7 @@ Vue.component('comp1',
         data:function(){
 
             return{
-                estado: false,
+                estado: true,
                 nombre: "",
                 label: "",
                 list_label:['Capital','General Alvear',
@@ -48,15 +54,11 @@ Vue.component('comp1',
             }
         },
 
-
-
-
-
+        props:['actividad'],
 
         methods: {
 
             mostrarDato: function(){
-
 
                 alert(this.estado);
             },
@@ -84,13 +86,22 @@ Vue.component('comp1',
 
         }
 
-
-
     }) 
 
+
+
+
 Vue.component('comp2', { 
-  template:'<div>Component 2</div>' 
+  template:'<div>Component 2 Oscar</div>' 
 }) 
+
+
+
+Vue.filter()
+
+
+
+
 
 
 
