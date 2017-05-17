@@ -25,7 +25,10 @@
 
 
 
-<pre> {{localidad | json}}</pre>
+<pre> {{ edad  | reverse |edades }}</pre>
+
+<input type="name" class="form-control" placeholder="comp1 Facilitadores" name= "1" id="nom_facilitador"  v-model="edad">
+
 
 <div class="main-content">
 	<div class="main-content-inner">
@@ -50,10 +53,11 @@
 
             <comp2></comp2>
 
-                            <div class="form-group">
+
+                            <div class="form-group has-warning has-error">
                                 <label for="inputName" class="control-label col-xs-6">Facilitador(*)</label>
                                 <div class="col-xs-6">
-                                    <input type="name" class="form-control" placeholder="comp1 Facilitadores" name= "1" id="nom_facilitador"  required>
+                                    <input type="name" class="form-control " placeholder="comp1 Facilitadores" name= "1" id="nom_facilitador"  required>
                                 </div>
                             </div>
 

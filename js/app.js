@@ -20,13 +20,13 @@
 // todo crear componentes con vue
 Vue.component('comp1', 
     {
-        template:'  <div class="form-group">\
-                        <label class="control-label col-xs-6">{{label }} {{actividad}}</label>\
-                        <div class="col-xs-6">\
-                            <p>{{ nombre }}</p>\
-                            <input type="number" class="form-control"  name="5" id="barrio_c" v-if="estado" v-model="nombre">\
-                        </div>\
-                    </div>',
+        template:`<div class="form-group">
+                        <label class="control-label col-xs-6">{{label }} {{actividad}}</label>
+                        <div class="col-xs-6">
+                            <p>{{ nombre }}</p>
+                            <input type="number" class="form-control"  name="5" id="barrio_c" v-if="estado" v-model="nombre">
+                        </div>
+                    </div>`,
 
 
         ready:function(){
@@ -92,20 +92,58 @@ Vue.component('comp1',
 
 
 Vue.component('comp2', { 
-  template:'<div>Component 2 Oscar</div>' 
+  template:`             <div class="form-group" id= "">
+                                <label class="control-label col-xs-6"></label>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-4">¿De qué edad/es?</label>
+                                        <div class="col-xs-8" >
+
+                                            <ul id = "list_edades"class="text-uppercase">
+
+                                            </ul>
+                                            <input type="number" class="form-control"  name ="edad_embarazo" id= "edad_embarazo" >
+                                            <br>
+                                            
+                                            <button type="button" class="btn btn-info" id="btn_nueva_edad">Ingresar Edad</button>                                           
+                                            
+                                        </div>  
+                                    </div>
+                                </div>
+				            </div>`
 }) 
 
 
 
-Vue.filter()
+// todo crear filtro para edades
+
+Vue.filter('edades', function(value){
+
+    // let inf = parseInt(linf);
+    // let sup = parseInt(lsup);
 
 
 
+    return value.toUpperCase(this.tipo)
+})
+
+
+Vue.filter('reverse', function (value) {
+  return value.split('').reverse().join('')
+})
 
 
 
 
 
 new Vue({
-  el: 'body'
+  el: 'body',
+
+
+  data:{
+
+        tipo:"",
+
+        edad:""
+  }
 })
