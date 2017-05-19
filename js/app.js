@@ -20,7 +20,7 @@
 // todo crear componentes con vue
 Vue.component('comp1', 
     {
-        template:`<div class="form-group">
+        template:`<div class="form-group animated rubberBand">
                         <label class="control-label col-xs-6">{{label }} {{actividad}}</label>
                         <div class="col-xs-6">
                             <p>{{ nombre }}</p>
@@ -92,7 +92,7 @@ Vue.component('comp1',
 
 
 Vue.component('comp2', { 
-  template:`             <div class="form-group" id= "">
+  template:`             <div class="form-group animated  jello" id= "">
                                 <label class="control-label col-xs-6"></label>
                                 <div class="col-xs-6">
                                     <div class="form-group">
@@ -112,8 +112,6 @@ Vue.component('comp2', {
                                 </div>
 				            </div>`
 }) 
-
-
 
 // todo crear filtro para edades
 
@@ -135,15 +133,53 @@ Vue.filter('reverse', function (value) {
 
 
 
-
-new Vue({
+var url= "https://randomuser.me/api/?results=50";
+var grid = new Vue({
   el: 'body',
 
+  created: function(){
+
+    this.ajaxResponse();
+
+  },
 
   data:{
-
+        estado: false,
         tipo:"",
-
+        cond:"",
+        img: "",
         edad:""
+  },
+
+  methods:{
+
+        ajaxResponse: function(){
+
+            this.$http.get(url)
+
+                .then(function(resp){
+
+                    console.log(resp.body.results[9].picture)
+                    this.img= resp.body.results[9].picture.large
+                })
+
+
+
+        }
+
+
+
+
+
+
   }
+
+
+
+
 })
+
+// Vue.transition('bounce', {
+//   enterClass: 'rubberBand',
+//   leaveClass: 'headShake'
+// })

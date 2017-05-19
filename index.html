@@ -9,6 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/myStile.css" rel="stylesheet">
 </head>
 <body>
 
@@ -30,12 +32,18 @@
 <input type="name" class="form-control" placeholder="comp1 Facilitadores" name= "1" id="nom_facilitador"  v-model="edad">
 
 
-<div class="main-content">
+
+
+
+
+<div  class="main-content">
 	<div class="main-content-inner">
 		<div class="page-content">
 
 
-<div class="container">   
+
+
+<div class="container animated  " >   
 
  
         <form id="encuesta_ini" action="" method="post">
@@ -51,7 +59,7 @@
             <comp1 :actividad="false"></comp1>
 
 
-            <comp2></comp2>
+            <comp2 v-show="estado"></comp2>
 
 
                             <div class="form-group has-warning has-error">
@@ -164,36 +172,22 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group">
                                 <label class="control-label col-xs-6">¿Hay alguna mujer embarazada?(*)</label>
                                 <div class="col-xs-6">
-                                    <select class="form-control" name= "embarazo" id= "embarazo" placeholder= "seleccionar">
-                                    <option value="0">SI</option>
-                                    <option value="1" selected >NO</option>
+                                    <select class="form-control" name= "embarazo" id= "embarazo" placeholder= "seleccionar" v-model="cond">
+                                        <option value="0">SI</option>
+                                        <option value="1">NO</option>
                                     </select>
                                 </div>
     					    </div>
 
 
-                            <div class="form-group" id= "filter_embarazo">
-                                <label class="control-label col-xs-6"></label>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label class="control-label col-xs-4">¿De qué edad/es?</label>
-                                        <div class="col-xs-8" >
 
-                                            <ul id = "list_edades"class="text-uppercase">
+                            <comp2 v-if="cond === '0'"></comp2>
 
-                                            </ul>
-                                            <input type="number" class="form-control"  name ="edad_embarazo" id= "edad_embarazo" >
-                                            <br>
-                                            
-                                            <button type="button" class="btn btn-info" id="btn_nueva_edad">Ingresar Edad</button>                                           
-                                            
-                                        </div>  
-                                    </div>
-                                </div>
-				            </div>
+
 
 
 <!-- bloque de observaciones-->
@@ -235,5 +229,6 @@
 
 </body>
 <script src="js/lib/vue.js"></script>
+<script src="js/lib/vue-resource.min.js"></script>
 <script src="js/app.js"></script>
 </html>
