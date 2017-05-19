@@ -51,7 +51,7 @@
         <div class="row form-horizontal" id= "bloque_0" >     <!-- bloque 0 -->
                 <div class="panel panel-default">
                 
-                    <div class="panel-heading orange">{{nombre}}</div>
+                    <div class="panel-heading orange">NOMBRE DEL BLOQUE</div>
                         <div class="panel-body">
                         
 			<comp1 :actividad="aaa"></comp1>
@@ -59,7 +59,13 @@
             <comp1 :actividad="false"></comp1>
 
 
-            <comp2 v-show="estado"></comp2>
+            <comp2 v-show="estado">  </comp2>
+
+
+            <lista :title ="datos"> </lista>
+            <lista :title ="ejemplos"> </lista>
+            <lista :title ="pruebas"> </lista>
+            <lista :title ="es usted???"> </lista>
 
 
                             <div class="form-group has-warning has-error">

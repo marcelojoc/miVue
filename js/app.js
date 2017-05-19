@@ -113,6 +113,70 @@ Vue.component('comp2', {
 				            </div>`
 }) 
 
+
+
+Vue.component('numerico',{
+
+    template: '<button @click="incrementar">{{numeroClicks}}</button>',
+    data: function() {
+        return {
+        numeroClicks: 0
+        }
+    },
+
+    methods:{
+
+        incrementar: function(){
+
+            this.numeroClicks++;
+
+        }
+
+
+    }
+
+});
+
+
+
+
+
+
+
+Vue.component('lista',{
+
+template: ` <div class="form-group">
+                <label class="control-label col-xs-6">{{title}}</label>
+                <div class="col-xs-6">
+                    <select class="form-control" id="localidad" name ="4" >
+                    
+
+                    </select>
+                </div>
+            </div>`,
+    data: function() {
+        return {
+            title:"aa"
+        }
+    },
+
+    props:['title'],
+
+    methods:{
+
+        incrementar: function(){
+
+            this.numeroClicks++;
+
+        }
+
+
+    }
+
+});
+
+
+
 // todo crear filtro para edades
 
 Vue.filter('edades', function(value){
