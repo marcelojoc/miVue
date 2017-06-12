@@ -40,124 +40,74 @@
         </nav>
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="page-header">List of things</h1>
+                <h1 class="page-header">Lista de personas</h1>
                     <table class="table table-stripped table-bordered">
-            <thead>
-                <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Usuario</th>
-                </tr>
-            </thead>
-            <tbody v-for="data in employe" >
-                <tr>
 
-                <th scope="row">1</th>
-                <td>{{data.nombre}}
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
-                            <span class="glypicon glyphicon glyphicon-pencil"></span>
-                        </button>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Usuario</th>
+                            </tr>
+                        </thead>
+                        <tbody v-for="data in employe" >
+                            <tr>
+
+                            <th scope="row">1</th>
+                            <td>{{data.nombre}}
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                        <span class="glypicon glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>{{data.apellido}}</td>
+                            <td>{{data.usuario}}</td>
+
+                            </tr>
+                            
+                        
+                        </tbody>
+                    </table>
+
+                <!--<pre>{{$data | json}}</pre>-->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="fecha_relevamiento" class="control-label col-xs-6">Nombre</label>
+                                <div class="col-xs-6">
+                                    <input class="form-control date-picker" id="id_nombre"  type="text" name= "id_nombre" v-model="newNombre">
+                                </div>
+                            </div>
+                                <br>
+                            <div class="form-group">
+                                <label for="fecha_relevamiento" class="control-label col-xs-6">Apellido</label>
+                                <div class="col-xs-6">
+                                    <input class="form-control date-picker" id="id_apellido"  type="text" name= "id_apellido" v-model="newApellido">
+                                </div>
+                            </div>
+                                <br>
+                            <div class="form-group">
+                                <label for="fecha_relevamiento" class="control-label col-xs-6">Usuario</label>
+                                <div class="col-xs-6">
+                                    <input class="form-control date-picker" id="id_usuario"  type="text" name= "id_usuario" v-model="newUsuario">
+                                </div>
+                            </div>
+                                <br>
+
+                        </div>
                     </div>
-                </td>
-                <td>{{data.apellido}}</td>
-                <td>{{data.usuario}}</td>
-
-                </tr>
-                
-            
-            </tbody>
-            </table>
-
-                <pre>{{$data | json}}</pre>
-            <div class="row">
-                <div class="col-md-8">
-        <div class="row">
-
-
-            <div class="form-group">
-                <label for="fecha_relevamiento" class="control-label col-xs-6">Nombre</label>
-                <div class="col-xs-6">
-                    <input class="form-control date-picker" id="id-date-picker-1" data-date-format="dd-mm-yyyy" type="text" name= "2" id= "fecha_relevamiento" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="fecha_relevamiento" class="control-label col-xs-6">Apellido</label>
-                <div class="col-xs-6">
-                    <input class="form-control date-picker" id="id-date-picker-1" data-date-format="dd-mm-yyyy" type="text" name= "2" id= "fecha_relevamiento" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="fecha_relevamiento" class="control-label col-xs-6">Usuario</label>
-                <div class="col-xs-6">
-                    <input class="form-control date-picker" id="id-date-picker-1" data-date-format="dd-mm-yyyy" type="text" name= "2" id= "fecha_relevamiento" required>
-                </div>
-            </div>
-
-
-        </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pull-right">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                        <span class="glypicon glyphicon glyphicon-plus"></span>
-                        Add User
-                        </button>
+                    <div class="col-lg-4">
+                            <input type="button" value="Almacenar" @click="guardarLista">
                     </div>
+
                 </div>
-
-
-
-
-
-
-
-            </div>
             
-            
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add User</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
-        </div>
-        <div class="checkbox">
-            <label>
-            <input type="checkbox"> Check me out
-            </label>
-        </div>
-        </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-            </div>
-        </div>
-        </div>
+        
                 </div>
-                <div class="col-lg-4">
-                    
-                </div>
+
             </div>
 
 

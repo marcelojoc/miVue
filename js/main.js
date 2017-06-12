@@ -19,24 +19,7 @@
 
     data: {
 
-            employe:[
-                    {
-                        nombre: "marcelo",
-                        apellido: "contreras",
-                        usuario: "@tuvieja"
-                    },
-                    {
-                        nombre: "pocho",
-                        apellido: "pocha",
-                        usuario: "@tuvieja"
-                    },
-                    {
-                        nombre: "catulo",
-                        apellido: "contreras",
-                        usuario: "@tuvieja"
-                }
-
-            ]
+            employe:[]
 
     },
 
@@ -45,9 +28,14 @@
 
     methods: {
 
-            addEmploye: function(){
+            guardarLista: function(){
 
-
+                //alert('prueba de lista '+ this.newNombre);
+                this.employe.push({ nombre: this.newNombre,
+                                    apellido: this.newApellido,
+                                    usuario: this.newUsuario
+                                    });
+       
 
             }
 
