@@ -11,11 +11,18 @@
 
 
   // var db = firebase.database(); //referencia de servicio de base de datos
-
+var count=0;
 
   var app = new Vue({
 
     el: "#content",
+
+    ready:function(){
+
+
+
+      
+    },
 
     data: {
 
@@ -31,20 +38,34 @@
             guardarLista: function(){
 
                 //alert('prueba de lista '+ this.newNombre);
-                this.employe.push({ nombre: this.newNombre,
+
+
+                this.employe.push({ id:count++,
+                                    nombre: this.newNombre,
                                     apellido: this.newApellido,
-                                    usuario: this.newUsuario
-                                    });
+                                    usuario: this.newUsuario,
+                                    estado: true
+                                  });
+                this.newNombre   = "";
+                this.newApellido = "";
+                this.newUsuario  = "";
        
+
+            },
+
+
+
+            changeState: function($id_list){
+
+                  alert('cambianfdo estado de la lista '+ $id_list);
+
+
 
             }
 
-
-
-
-
-
     }
+
+
 
 
 

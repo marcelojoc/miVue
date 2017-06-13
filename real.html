@@ -51,10 +51,10 @@
                                 <th>Usuario</th>
                             </tr>
                         </thead>
-                        <tbody v-for="data in employe" >
+                        <tbody v-for="data in employe | orderBy 'nombre'" >
                             <tr>
 
-                            <th scope="row">1</th>
+                            <th scope="row">{{data.id}}</th>
                             <td>{{data.nombre}}
                                 <div class="pull-right">
                                     <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
@@ -63,7 +63,7 @@
                                 </div>
                             </td>
                             <td>{{data.apellido}}</td>
-                            <td>{{data.usuario}}</td>
+                            <td>{{data.usuario}} <span @click="changeState(data.id)"> {{data.estado}}</span></td>
 
                             </tr>
                             
@@ -71,7 +71,7 @@
                         </tbody>
                     </table>
 
-                <!--<pre>{{$data | json}}</pre>-->
+                <pre>{{$data | json}}</pre>
                 <div class="row">
                     <div class="col-md-8">
                         <div class="row">
