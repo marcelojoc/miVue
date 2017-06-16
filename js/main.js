@@ -57,7 +57,7 @@ var count=0;
 
             changeState: function($id_list){
 
-                  alert('cambianfdo estado de la lista '+ $id_list);
+                  alert('cambiando estado de la lista '+ $id_list);
 
 
 

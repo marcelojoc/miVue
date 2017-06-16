@@ -1,20 +1,24 @@
-// var app = new Vue({
+var app = new Vue({
 
-//     el: 'body',
-//     data:{
-//         nombre:'   Bloque de Identificación del Territorio/Facilitador/Familia relevada',
-//         localidad:['Capital','General Alvear',
-//                     'Godoy Cruz','Guaymallén',
-//                     'Junín','La Paz','Las Heras',
-//                     'Lavalle' ,'Lujan de Cuyo',
-//                     'Maipú','Malargue','Rivadavia',
-//                     'San Carlos','San Martín',
-//                     'San Rafael','Santa Rosa',
-//                     'Tunuyán','Tupungato'
-//         ]
-//     }
+    el: 'body',
+    data:{
+        estado:'prueba',
+        grid: ""
 
-// });
+    },
+
+    methods:{
+
+
+
+
+    }
+
+
+
+
+
+});
 
 
 // todo crear componentes con vue
@@ -145,7 +149,7 @@ Vue.component('numerico',{
 
 Vue.component('lista',{
 
-template: ` <div class="form-group">
+    template: ` <div class="form-group">
                 <label class="control-label col-xs-6">{{title}}</label>
                 <div class="col-xs-6">
                     <select class="form-control" id="localidad" name ="4" >
@@ -174,6 +178,73 @@ template: ` <div class="form-group">
     }
 
 });
+
+
+
+Vue.component('pregunta',{
+
+    template: ` <div class="form-group">
+                    <label for="inputName" class="control-label col-xs-6" v-if="estado === 'prueba'">{{label}}</label>
+                    <div class="col-xs-6">
+                        <input type="number" class="form-control"  name= "nroRelev" id="nroRelev" value= "" required>
+                    </div>
+                </div>`,                           
+                
+
+    data:function(){
+
+        return{
+            estado: 'prueba',
+            grid: "",
+            label: "",
+            tipo:"",
+            content:[]
+
+        }
+
+    },
+
+     props:['label', 'grid', 'tipo']
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
