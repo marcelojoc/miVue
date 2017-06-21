@@ -241,8 +241,6 @@ Vue.component('pregunta',{
         
                 alert('tu vieja');
         
-
-
         },
 
 
